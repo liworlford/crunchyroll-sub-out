@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Crunchyroll SubOut",
     "version": "0.0.1",
-    "description": "Display subtitles outside the video player to enable the use of a popup dictionary.",
+    "description": "This is a Google Chrome extension that displays subtitles outside the video player to enable the use of a popup dictionary.",
     "content_scripts": [
       {
         "matches": ["https://www.crunchyroll.com/watch/*", "https://static.crunchyroll.com/vilos-v2/web/vilos/player.html"],
