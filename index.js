@@ -1,11 +1,11 @@
 window.addEventListener("load", async () => {
   if (location.host === 'www.crunchyroll.com') {
-    console.log(`[${location.host}] Crunchyroll-subtitle started.`)
+    console.log(`[${location.host}] Crunchyroll SubOut started.`)
 
     const observer = new MutationObserver((mutationList, observer) => {
       const wrapper = document.querySelector('.video-player-wrapper')
       if (wrapper) {
-        wrapper.insertAdjacentHTML('afterend', '<div id="crunchyroll-subtitle"></div>')
+        wrapper.insertAdjacentHTML('afterend', '<div id="crunchyroll-sub-out"></div>')
         observer.disconnect()
         console.log(`[${location.host}] Observer disconnected.`)
       } 
@@ -17,13 +17,13 @@ window.addEventListener("load", async () => {
       if (e.origin !== 'https://static.crunchyroll.com') return
 
       if (typeof e.data === 'object' && e.data.type === 'subtitle') {
-        document.querySelector('#crunchyroll-subtitle').innerText = e.data.subtitle
+        document.querySelector('#crunchyroll-sub-out').innerText = e.data.subtitle
       }
     });
   }
 
   if (location.host === 'static.crunchyroll.com') {
-    console.log(`[${location.host}] Crunchyroll-subtitle started.`)
+    console.log(`[${location.host}] Crunchyroll SubOut started.`)
 
     const target = document.querySelector('#vilosVttJs');
     let exSubtitle = ''
