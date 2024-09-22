@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Crunchyroll subtitle",
+    "version": "0.0.1",
+    "description": "",
+    "content_scripts": [
+      {
+        "matches": ["https://www.crunchyroll.com/watch/*", "https://static.crunchyroll.com/vilos-v2/web/vilos/player.html"],
+        "js": ["index.js"],
+        "css": ["index.css"],
+        "all_frames": true
+      }
+    ]
+  }
