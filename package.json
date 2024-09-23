@@ -1,0 +1,15 @@
+{
+  "name": "crunchyroll-subtitle",
+  "version": "0.0.1",
+  "description": "This is a Google Chrome extension that displays subtitles outside the video player to enable the use of a popup dictionary.",
+  "main": "index.js",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.2"
+  },
+  "scripts": {
+    "check": "biome check .",
+    "check:fix": "biome check --write ."
+  },
+  "author": "Kohei Tsuchiya",
+  "license": "ISC"
+}
