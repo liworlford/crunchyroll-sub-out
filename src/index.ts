@@ -7,7 +7,7 @@ window.addEventListener("load", async () => {
       if (wrapper) {
         wrapper.insertAdjacentHTML(
           "afterend",
-          '<div id="crunchyroll-sub-out"></div>'
+          '<div id="crunchyroll-sub-out"></div>',
         );
         observer.disconnect();
         console.log(`[${location.host}] Observer disconnected.`);
@@ -45,7 +45,7 @@ window.addEventListener("load", async () => {
         if ((targetEl as HTMLElement).innerText !== exSubtitle) {
           window.parent.postMessage(
             { type: "subtitle", subtitle: (targetEl as HTMLElement).innerText },
-            "https://www.crunchyroll.com/watch/*"
+            "https://www.crunchyroll.com/watch/*",
           );
           exSubtitle = (targetEl as HTMLElement).innerText;
         }
