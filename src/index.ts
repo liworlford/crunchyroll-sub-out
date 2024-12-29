@@ -28,6 +28,10 @@ function initParent() {
       const targetEl = document.querySelector('#crunchyroll-sub-out');
       if (targetEl) (targetEl as HTMLElement).innerText = e.data.subtitle;
     }
+
+    if (typeof e.data === 'object' && e.data.type === 'currentTime') {
+      console.log(`Current Playback Time: ${e.data.currentTime}`);
+    }
   });
 }
 
@@ -51,6 +55,16 @@ function initChild() {
     });
 
     observer.observe(targetEl, { childList: true, subtree: true });
+  }
+
+  const videoEl = document.querySelector('video');
+  if (videoEl) {
+    videoEl.addEventListener('timeupdate', () => {
+      window.parent.postMessage(
+        { type: 'currentTime', currentTime: videoEl.currentTime },
+        'https://www.crunchyroll.com/watch/*',
+      );
+    });
   }
 }
 
